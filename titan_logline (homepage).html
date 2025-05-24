@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titan - Homepage</title>
+    <style>  
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff00e1;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu, .sub-menu, .sub-sub-menu {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            border-radius: 5px;
+            min-width: 150px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-menu {
+            top: 100%;
+            left: 0;
+        }
+
+        .sub-menu {
+            left: 100%;
+            top: 0;
+        }
+
+        .sub-sub-menu {
+            left: 100%;
+            top: 0;
+        }
+
+        .dropdown-menu li, .sub-menu li, .sub-sub-menu li {
+            display: block;
+            padding: 5px 15px;
+            position: relative;
+        }
+
+        .dropdown-menu li a, .sub-menu li a, .sub-sub-menu li a {
+            display: block;
+            color: white;
+            font-size: 16px;
+            padding: 5px;
+            transition: background 0.3s;
+        }
+
+        .dropdown-menu li a:hover, .sub-menu li a:hover, .sub-sub-menu li a:hover {
+            background: #ff00e1;
+            color: white;
+        }
+
+        .dropdown:hover > .dropdown-menu, .dropdown-menu li:hover > .sub-menu, .sub-menu li:hover > .sub-sub-menu {
+            display: block;
+        }
+
+        /*white lines in between menu items*/
+        .dropdown-menu li {
+            border-bottom: 1px solid white;
+        }
+
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+         }
+
+        .sub-menu {
+            display: none;
+            padding-left: 15px;
+        }
+
+        .sub-menu a {
+            font-size: 14px;
+        }
+
+        .show {
+            display: block;
+        }
+
+        /*addition*/
+
+        /* Centering Main Content */
+        .container {
+            max-width: 60%;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .logline {
+            font-size: 18px;
+            font-weight: 300;
+            margin-top: 20px;
+        }
+
+        .author{
+            text-decoration: underline;
+        }
+
+        .search{
+            --padding: 14px;
+            width: max-content;
+            display: flex;
+            align-items: center;
+            padding: var(--pading);
+            border-radius: 28px;
+            background: #f6f6f6;
+            transition: box-shadow 0.25;
+        }
+
+        .search:focus-within{
+            box-shadow: 0 0 2px rgba(0, 0, 0, o.75);
+        }
+
+        .search-input{
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            color: #333333;
+            margin-left: var(--padding);
+            outline: none;
+            border: none;
+            background: transparent;
+        }
+
+        .search-input::placeholder, .search-icon{
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        /**/
+        .menu, .submenu, .sub-sub-menu {
+            list-style: none;
+            padding: 0;
+        }
+        .submenu, .sub-sub-menu {
+            display: none;
+        }
+        .submenu.active, .sub-sub-menu.active {
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+
+</head>
+<body>
+    <!-- Search Bar -->
+        <form action="">
+            <div class="search">
+                <span class="search-icon material-symbols-outlined">search</span>
+                <input class="search-input" type="search" placeholder="search">
+            </div>
+        </form>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="#">Characters</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown">
+                        <a href="#">Prologue</a>
+                        <ul class="sub-sub-menu">
+                            <li class="dropdown">
+                                <a href="titan.html">Titan</a>
+                                <a href="aura.html">Aura</a>
+                                <a href="phoebe.html">Phoebe</a>
+                                <a href="max.html">Max</a>
+                                <a href="rhea.html">Rhea</a>
+                                <a href="gold.html">Gold</a>
+                                <a href="silver.html">Silver</a>
+                                <a href="spectra.html">Spectra</a>
+                                <a href="hero.html">Hero</a>
+                                <a href="wealth.html">Wealth</a>
+                                <a href="summer.html">Summer</a>
+                                <a href="michael.html">Michael</a>
+                                <a href="sage.html">Sage</a>
+                                <a href="chiron.html">Chiron</a>
+                                <a href="knowledge_yuzuki.html">Knowledge (Hanumako's President)</a>
+                                <a href="bluebell.html">Bluebell</a>
+                                <a href="sapphire.html">Sapphire</a>
+                                <a href="topaz.html">Topaz</a>
+                                <a href="seer.html">Seer</a>
+                                <a href="celestial.html">Celestial</a>
+                                <a href="vermillion.html">Vermillion</a>
+                                <a href="queen.html">Queen</a>
+                                <a href="flight.html">Flight</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Arc 1</a>
+                        <ul class="sub-menu">
+                            <li class="dropdown">
+                                <a href="#">Chapter 1</a>
+                                <ul class="sub-sub-menu">
+                                    <li><a href="heir.html">Heir</a></li>
+                                    <li><a href="knowledge_kirui.html">Knowledge (Heir's Partner)</a></li>
+                                    <li><a href="fox.html">Fox</a></li>
+                                    <li><a href="alpha.html">Alpha</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Chapter 2</a>
+                                <ul class="sub-sub-menu">
+                                    <li><a href="crystal.html">Crystal</a></li>
+                                    <li><a href="#">...</a></li>
+                                    <li><a href="#">...</a></li>
+                                    <li><a href="eddy.html">Eddy</a></li>
+                                    <li><a href="libra.html">Libra</a></li>
+                                    <li><a href="honor.html">Honor</a></li>
+                                    <li><a href="saint.html">Saint</a></li>
+                                    <li><a href="faith.html">Faith</a></li>
+                                    <li><a href="fan.html">Fan</a></li>
+                                    <li><a href="fortune.html">Fortune</a></li>
+                                    <li><a href="angelo.html">Angelo</a></li>
+                                    <li><a href="#">...</a></li>
+                                    <li><a href="azrael.html">Azrael</a></li>
+                                    <li><a href="epsilon.html">Epsilon</a></li>
+                                    <li><a href="heather.html">Heather</a></li>
+                                    <li><a href="bless.html">Bless</a></li>
+                                    <li><a href="chase.html">Chase</a></li>
+                                    <li><a href="ocean.html">Ocean</a></li>
+                                    <li><a href="light.html">Light</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#">Chapter 3</a>
+                                <ul class="sub-sub-menu">
+                                    <li><a href="cosmos.html">Cosmos</a></li>
+                                    <li><a href="grace.html">Grace</a></li>
+                                    <li><a href="heaven.html">Heaven</a></li>
+                                    <li><a href="ace.html">Ace</a></li>
+                                    <li><a href="hunter.html">Hunter</a></li>
+                                    <li><a href="miles.html">Miles</a></li>
+                                    <li><a href="leo.html">Leo</a></li>
+                                    <li><a href="ash.html">Ash</a></li>
+                                    <li><a href="king.html">King</a></li>
+                                    <li><a href="royal.html">Royal</a></li>
+                                    <li><a href="storm.html">Storm</a></li>
+                                    <li><a href="song.html">Song</a></li>
+                                    <li><a href="nihilus.html">Nihilus</a></li>
+                                    <li><a href="exodus.html">Exodus</a></li>
+                                    <li><a href="astral.html">Astral</a></li>
+                                    <li><a href="hope.html">Hope</a></li>
+                                    <li><a href="eta.html">Eta</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#">Chapter 4</a>
+                                <ul class="sub-sub-menu">
+                                    <li><a href="omega.html">Omega</a></li>
+                                    <li><a href="lucky.html">Lucky</a></li>
+                                    <li><a href="charity.html">Charity</a></li>
+                                    <li><a href="#"><i>"Yuzuki's Hiruchi Bodyguard</i></a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#">Chapter 5</a>
+                                <ul class="sub-sub-menu">
+                                    <li><a href="Onyx.html">Onyx</a></li>
+                                    <li><a href="avatar.html">Avatar</a></li>
+                                    <li><a href="mortis.html">Mortis</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#">Chapter 6</a>
+                                <ul class="sub-sub-menu">
+                                    <li><a href="victor.html">Victor</a></li>
+                                    <li><a href="#"><i>"Death's Puppeteer"</i></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Arc 2</a>
+                        <ul class="sub-menu">
+                            <li class="dropdown">
+                                <a href="#">Allies</a>
+                                <ul class="sub-sub-menu">
+                                    <li><a href="#">Mentors</a></li>
+                                    <li><a href="#">Friends</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Enemies</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <!---->
+            <li class="dropdown">
+                <a href="#">Story</a>
+                <ul class="dropdown-menu">
+                    <li><a href="titan_prologue.html">Prologue: The Tasuka Brothers</a></li>
+                    <li class="dropdown">
+                        <a href="#">Arc 1: Operation Revolution</a>
+                        <ul class="sub-menu">
+                            <li><a href="titan_arc1_chapter1.html">Chapter 1: Revolution</a></li>
+                            <li><a href="titan_arc1_chapter2.html">Chapter 2: Hostages</a></li>
+                            <li><a href="titan_arc1_chapter3.html">Chapter 3: Rebellion</a></li>
+                            <li><a href="titan_arc1_chapter4.html">Chapter 4: Capture</a></li>
+                            <li><a href="titan_arc1_chapter5.html">Chapter 5: The Plan</a></li>
+                            <li><a href="titan_arc1_chapter6.html">Chapter 6: The End</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Arc 2: Rebirth</a>
+                    </li>
+                </ul>
+            </li>
+            <!---->
+            <li class="dropdown">
+                <a href="#">Lore</a>
+                <ul class="dropdown-menu">
+                    <li><a href="five_united_societies.html">The Five United Societies</a></li>
+                    <li><a href="operation_revolution.html">Operation Revolution</a></li>
+                    <li><a href="quantum_mechanical_form.html">The Quantum Mechanical Form</a></li>
+                </ul>
+            </li>
+            <!---->
+            <li class="dropdown">
+                <a href="#">Concepts</a>
+                <ul class="dropdown-menu">
+                    <li><a href="titan_konora.html">Konora</a></li>
+                    <li><a href="titan_shudo_(power_system).html">Shudo</a></li>
+                    <li><a href="titan_shudo_academy.html">The Shudo Academy</a></li>
+                    <li><a href="five_hanumako_swordsmen.html">The Five Hanumako Swordsmen</a></li>
+                </ul>
+            </li>
+            <!---->
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1><i>Titan.</i></h1>
+        <p class="logline">
+            An adolescent Titan Tasuka vows to take revenge on the man behind the untimely deaths of his beloved parents; 
+            on top of that, he and his twin brother, Aura Tasuka, must take part in a prophecy that shakes the world.
+        </p>
+        <p class="author" style="margin-top: 30px;">
+            <a href="author.html" style="text-decoration: underline; color: white; transition: color 0.3s;" onmouseover="this.style.color='#ff00e1'" onmouseout="this.style.color='white'">
+                <i>- Mthokozisi Lindokuhle Mahlangu -</i>
+            </a>
+        </p>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const dropdowns = document.querySelectorAll(".dropdown");
+
+        dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector("a");
+        const menu = dropdown.querySelector(".dropdown-menu");
+
+            link.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the page from jumping
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+            });
+
+            // Hide dropdown when clicking outside
+            document.addEventListener("click", function(event) {
+            if (!dropdown.contains(event.target)) {
+                menu.style.display = "none";
+            }
+            });
+        });
+    });
+    </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        function setupPagination(menuClass) {
+            document.querySelectorAll(menuClass).forEach(menu => {
+                const items = Array.from(menu.querySelectorAll("li"));
+                const itemsPerPage = 10;
+                let currentIndex = 0;
+
+                function renderPage() {
+                    items.forEach((item, index) => {
+                        item.style.display = (index >= currentIndex && index < currentIndex + itemsPerPage) ? "block" : "none";
+                    });
+
+                    backButton.style.display = currentIndex > 0 ? "inline-block" : "none";
+                    nextButton.style.display = currentIndex + itemsPerPage < items.length ? "inline-block" : "none";
+                }
+
+                // Create navigation buttons container
+                const navContainer = document.createElement("li");
+                navContainer.style.display = "flex";
+                navContainer.style.justifyContent = "space-between";
+                navContainer.style.padding = "5px";
+
+                const backButton = document.createElement("a");
+                backButton.href = "#";
+                backButton.textContent = "Back";
+                backButton.style.marginRight = "10px";
+
+                const nextButton = document.createElement("a");
+                nextButton.href = "#";
+                nextButton.textContent = "Next";
+
+                backButton.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    if (currentIndex > 0) {
+                        currentIndex -= itemsPerPage;
+                        renderPage();
+                    }
+                });
+
+                nextButton.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    if (currentIndex + itemsPerPage < items.length) {
+                        currentIndex += itemsPerPage;
+                        renderPage();
+                    }
+                });
+
+                navContainer.appendChild(backButton);
+                navContainer.appendChild(nextButton);
+                menu.appendChild(navContainer);
+                renderPage();
+            });
+        }
+        setupPagination(".sub-sub-menu");    
+    });
+    </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let nextButtons = document.querySelectorAll(".sub-sub-menu .next");
+        nextButtons.forEach(button => {
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+                let currentMenu = this.closest(".sub-sub-menu");
+                let nextMenu = currentMenu.nextElementSibling;
+                
+                if (nextMenu && nextMenu.classList.contains("sub-sub-menu")) {
+                    currentMenu.style.display = "none";
+                    nextMenu.style.display = "block";
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
